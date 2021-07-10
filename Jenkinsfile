@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build Application') {
             steps {
-			bat label: '', script: 'mvn -f maven-demo-docker/pom.xml clean package'
+			bat label: '', script: 'mvn -f pom.xml clean package'
             }
             post {
                 success {
