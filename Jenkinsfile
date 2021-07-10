@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build Application') {
             steps {
-			bat label: '', script: 'mvn -f java-tomcat-sample-docker/pom.xml clean package'
+			sh 'mvn -f java-tomcat-sample-docker/pom.xml clean package'
             }
             post {
                 success {
@@ -14,7 +14,7 @@ pipeline {
         }
 		stage('Create Tomcat Docker Image'){
 		steps {
-               bat label: '', script 'docker build . -t java-tomcat-sample-docker:${env.BUILD_ID}'
+               sh 'docker build . -t java-tomcat-sample-docker:${env.BUILD_ID}'
             }
 		}
     }
