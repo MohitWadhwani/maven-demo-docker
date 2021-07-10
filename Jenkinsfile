@@ -14,7 +14,7 @@ pipeline {
         }
 		stage('Create Tomcat Docker Image'){
 		steps {
-               bat label: '', 'docker build . -t maven-demo-docker:${env.BUILD_ID}'
+               bat label: '', 'docker build . -t maven-demo-docker:1
             }
 		}
     }
