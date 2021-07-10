@@ -14,7 +14,7 @@ pipeline {
         }
 		stage('Create Tomcat Docker Image'){
 		steps {
-               bat label:'', script 'docker build . -t java-tomcat-sample-docker:${env.BUILD_ID}'
+               bat label: '', script 'docker build . -t java-tomcat-sample-docker:${env.BUILD_ID}'
             }
 		}
     }
